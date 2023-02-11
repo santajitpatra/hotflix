@@ -1,0 +1,57 @@
+/* Row Component */
+
+.rowPosters::-webkit-scrollbar {
+    display: none;
+}
+
+.rowPoster {
+    transition: transform 450ms;
+}
+.rowPoster:hover {
+    transform: scale(1.08);
+}
+
+
+/* .rowPosterLarge */
+
+.rowPosterLarge {
+    max-height: 250px;
+}
+.rowPosterLarge:hover {
+    transform: scale(1.09);
+}
+
+/* Header Component  section*/
+
+
+.btn {
+    cursor: pointer;
+    color:#fff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.2vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-right: 1rem;
+    background: rgb(51, 51, 51, 0.5);
+}
+
+.btn:hover {
+    color: #000;
+    background: #e6e6e6;
+transition: 0.2s;
+}
+
+.headerSpan {
+    height: 7.4rem ;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgb(37, 37, 37, 0.61),
+        #111
+    );
+
+}
