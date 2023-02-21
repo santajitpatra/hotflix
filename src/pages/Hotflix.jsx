@@ -1,10 +1,10 @@
 import React from 'react'
-import { Navbar, Header, Row } from '../components'
+import { Navbar, Header, Row, Footer } from '../components'
 import requests from "../requests";
 
 const hotflix = () => {
   return (
-    <div className='bg-black'>
+    <div className='bg-[#010101]'>
       <Navbar />
       <Header />
       <Row title="HOTFLIX ORIGINAL" fetchUrl={requests.fetchHotflixOriginals} isLargeRow />
@@ -15,6 +15,7 @@ const hotflix = () => {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documantaries" fetchUrl={requests.fetchDocumentaries} />
+      <Footer/>
     </div>
   )
 }

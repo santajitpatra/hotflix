@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from '../axios';
 import React, { useEffect, useState } from 'react'
 import requests from '../requests';
-import '../style/style.css';
+
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 const Header = () => {
@@ -26,25 +26,27 @@ function truncate(str, n) {
 
   return (
    <header
-   className='bg-white object-contain h-[448px] '
+   className='text-white object-contain h-[448px] '
    style={{
     backgroundImage: `url(${base_url}${movie?.backdrop_path})`,
-    backgroundSize: 'cover',
+    backgroundSize: "cover",
    backgroundPosition: "center center",
    }}
    >
-    <div className='ml-[30px] pt-[190px] '>
+    <div className='ml-[30px] pt-[140px] h-[190px]'>
         <h1 className='font-extrabold text-5xl pb-[0.3rem]'>{movie?.title || movie?.name || movie?.original_name}</h1>
         <div>
             <button className='btn'>Play</button>
             <button className='btn'>My List</button>
         </div>
-        <p className='w-[45rem] leading-[1.3rem] pt-4 max-w-[360px] h-20'>
+        <p className='w-[45rem] leading-[1.3rem] pt-4 text-xs max-w-[360px] h-20'>
             {truncate(movie?.overview,150)}
         </p>
-    </div>
-    <div className='headerSpan'></div>
+    </div> 
+    <div className='mt-36 headerFade'/>
+
    </header>
+   
   )
 }
 
