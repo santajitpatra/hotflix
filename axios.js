@@ -6,7 +6,7 @@ const instance = axios.create({
 
 });
 
-instance.get('/foo-bar')
+// instance.get('/foo-bar')
 
 
 // https://api.themoviedb.org/3/foo-bar

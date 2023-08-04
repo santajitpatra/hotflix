@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar, Header, Row, Footer } from '../components'
 import requests from "../requests";
 
-const hotflix = () => {
+const Hotflix = () => {
   return (
     <div className='bg-[#010101]'>
       <Navbar />
@@ -20,4 +20,4 @@ const hotflix = () => {
   )
 }
 
-export default hotflix
+export default Hotflix
