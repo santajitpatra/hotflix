@@ -4,7 +4,7 @@ import requests from "../requests";
 
 const Hotflix = () => {
   return (
-    <div className='bg-[#010101]'>
+    <div className='bg-gray-950'>
       <Navbar />
       <Header />
       <Row title="HOTFLIX ORIGINAL" fetchUrl={requests.fetchHotflixOriginals} isLargeRow />

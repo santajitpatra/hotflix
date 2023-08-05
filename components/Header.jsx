@@ -26,18 +26,18 @@ const Header = () => {
 
   return (
     <header
-      className="text-white object-contain h-[448px] "
+      className="text-white object-contain h-[564px] "
       style={{
         backgroundImage: `url(${base_url}${movie?.backdrop_path})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
       }}
     >
-      <div className="ml-[30px] pt-[140px] h-[190px]">
-        <h1 className="font-extrabold text-5xl pb-[0.3rem]">
+      <div className="ml-[30px] pt-[140px] h-[190px] ">
+        <h1 className="font-extrabold text-5xl pb-[0.3rem] mt-28">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div>
+        <div className="">
           <button className="btn">Play</button>
           <button className="btn">My List</button>
         </div>
@@ -45,7 +45,7 @@ const Header = () => {
           {truncate(movie?.overview, 150)}
         </p>
       </div>
-      <div className="mt-36 headerFade" />
+      <div className="mt-64 headerFade" />
     </header>
   );
 };
