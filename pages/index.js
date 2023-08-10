@@ -1,22 +1,28 @@
 import Hotflix from "@/components/Hotflix";
 import { auth } from "@/firebase";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "../features/userSlice";
+import Login from "./login";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function Home() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // const uid = user.uid;
-        console.log(user);
+    const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth) {
+        dispatch(
+          login({
+            uid: userAuth.uid,
+            email: userAuth.email,
+          })
+        );
       } else {
-        // logout
+        dispatch(logout);
       }
     });
     return unsubscribe;
   }, []);
-  return (
-    <div>
-      <Hotflix />
-    </div>
-  );
+  return <div>{!user ? <Login /> : <Hotflix />}</div>;
 }
