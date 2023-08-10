@@ -9,6 +9,7 @@ import { onAuthStateChanged } from "firebase/auth";
 export default function Home() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
@@ -19,10 +20,12 @@ export default function Home() {
           })
         );
       } else {
-        dispatch(logout);
+        dispatch(logout());
       }
     });
+
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
+
   return <div>{!user ? <Login /> : <Hotflix />}</div>;
 }
