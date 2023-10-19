@@ -21,13 +21,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex justify-between p-5 w-full h-[60px] fixed top-0 z-[1] nav ${
+      className={`flex justify-between p-5 w-full h-16 fixed top-0 z-[1] nav ${
         show && "nav_scroll"
       }`}
     >
       <img
         onClick={() => router.push("/")}
-        className="w-[120px] object-contain fixed left-5 cursor-pointer"
+        className="w-[120px] object-contain fixed left-5 top-3 cursor-pointer"
         src="/hotflix.png"
         alt="Hotflix"
       />
@@ -35,9 +35,8 @@ const Navbar = () => {
         src={"profile.png"}
         alt=""
         onClick={() => router.push("/profile")}
-        className="W-[40px] h-[40px] object-contain fixed right-5 cursor-pointer"
+        className="W-[40px] h-[40px] object-contain fixed right-5 top-3 cursor-pointer"
       />
- 
     </div>
   );
 };
